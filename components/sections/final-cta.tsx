@@ -5,47 +5,65 @@ export default function FinalCTASection() {
   return (
     <section
       id="final"
-      className="relative scroll-mt-24 bg-[#111a2a] text-white"
+      className="relative scroll-mt-24 overflow-hidden"
+      style={{
+        backgroundColor: "var(--cta-band-bg)",
+        color: "var(--cta-text)",
+      }}
     >
       <div
         aria-hidden
-        className="absolute inset-0 bg-[radial-gradient(circle_at_20%_10%,rgba(255,200,125,0.18)_0%,rgba(255,200,125,0)_38%),radial-gradient(circle_at_85%_20%,rgba(125,170,255,0.20)_0%,rgba(125,170,255,0)_42%)]"
+        className="absolute inset-0"
+        style={{ background: "var(--cta-band-wash)" }}
       />
       <div
         aria-hidden
-        className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(8,12,20,0.55)_0%,rgba(8,12,20,0.75)_45%,rgba(8,12,20,0.90)_100%)]"
+        className="absolute inset-0"
+        style={{ background: "var(--cta-band-shade)" }}
       />
 
       <div className="relative mx-auto w-full max-w-6xl px-6 py-14 sm:px-10 sm:py-16 lg:px-16">
         <div className="max-w-2xl">
-          <p className="text-xs font-semibold uppercase tracking-[0.24em] text-white/65">
-            예약 시작
+          <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[var(--cta-text-muted)]">
+            Next step
           </p>
 
           <h2 className="mt-3 text-2xl font-semibold leading-tight tracking-tight sm:text-3xl">
-            원하는 일정으로 달숨 예약을 시작해보세요
+            예약 문의 또는 이용안내 확인
           </h2>
 
-          <p className="mt-3 text-sm leading-relaxed text-white/75 sm:text-base">
-            예약 또는 이용안내를 확인한 뒤, 편한 선택으로 진행할 수 있습니다.
+          <p className="mt-3 text-sm leading-relaxed text-[var(--cta-text-muted)] sm:text-base">
+            전화로 문의하시거나, 이용안내 페이지에서 시간·요금·유의사항을 살펴볼 수
+            있습니다.
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
             <Link
-              href={SITE_LINKS.stay.glamping}
-              className="inline-flex h-11 items-center justify-center rounded-full bg-white px-6 text-sm font-semibold text-[#0f2037] transition-colors hover:bg-white/90"
+              href={SITE_LINKS.contactTel}
+              className="inline-flex h-11 items-center justify-center rounded-full px-6 text-sm font-semibold transition-opacity hover:opacity-90"
+              style={{
+                background: "var(--button-primary-bg)",
+                color: "var(--button-primary-text)",
+              }}
             >
-              예약하기
+              예약 문의하기
             </Link>
             <Link
               href={SITE_LINKS.guide}
-              className="inline-flex h-11 items-center justify-center rounded-full border border-white/35 bg-white/10 px-6 text-sm font-semibold text-white backdrop-blur-sm transition-colors hover:bg-white/16"
+              className="inline-flex h-11 items-center justify-center rounded-full border px-6 text-sm font-semibold backdrop-blur-sm transition-opacity hover:opacity-90"
+              style={{
+                background: "var(--button-secondary-bg)",
+                borderColor: "var(--button-secondary-border)",
+                color: "var(--button-secondary-text)",
+              }}
             >
               이용안내 보기
             </Link>
           </div>
 
-          <p className="mt-6 text-xs text-white/55">예약 전 필요한 안내를 먼저 확인해두세요.</p>
+          <p className="mt-6 text-xs leading-relaxed text-[var(--cta-text-faint)] sm:text-sm">
+            일정과 인원을 정리해 두고 연락하시면 안내에 도움이 됩니다.
+          </p>
         </div>
       </div>
     </section>

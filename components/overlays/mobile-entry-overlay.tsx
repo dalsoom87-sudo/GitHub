@@ -1,6 +1,8 @@
 "use client";
 
 import Image from "next/image";
+import { useThemeClass } from "@/hooks/use-theme-class";
+import { THEME_ENTRY_IMAGE } from "@/lib/theme-media";
 import { useCallback, useEffect, useRef, useState } from "react";
 
 const DISMISSED_UNTIL_KEY = "dalsoom-mobile-entry-dismissed-until";
@@ -46,6 +48,9 @@ function isEventActive() {
 }
 
 export default function MobileEntryOverlay() {
+  const theme = useThemeClass();
+  const entryImageSrc = THEME_ENTRY_IMAGE[theme];
+
   const [open, setOpen] = useState(false);
   // Event auto-switching is disabled.
   // Keep event constants/function for later use.
@@ -192,11 +197,28 @@ export default function MobileEntryOverlay() {
       data-default-entry-title={activeContent.title}
       data-event-entry-title={EVENT_CONTENT.title}
     >
+      {/* 테마별 대표 배경 (카드 썸네일과 별도) */}
+      <div className="pointer-events-none absolute inset-0 z-0">
+        <Image
+          key={`${theme}:${entryImageSrc}`}
+          src={entryImageSrc}
+          alt=""
+          fill
+          className="object-cover"
+          sizes="100vw"
+        />
+        <div
+          aria-hidden
+          className="absolute inset-0"
+          style={{ background: "var(--mobile-entry-scrim)" }}
+        />
+      </div>
+
       {/* Very weak dim only; keep the main page visible */}
-      <div aria-hidden className="absolute inset-0 bg-black/0" />
+      <div aria-hidden className="pointer-events-none absolute inset-0 z-[1] bg-black/0" />
 
       {/* Bottom sheet */}
-      <div className="absolute inset-x-0 bottom-0">
+      <div className="absolute inset-x-0 bottom-0 z-10">
         <div className="relative rounded-t-3xl bg-transparent px-4 pb-4 pt-3 text-[#102238]">
           {/* Close button (top-right) */}
           <button
@@ -298,4 +320,3 @@ export default function MobileEntryOverlay() {
     </div>
   );
 }
-

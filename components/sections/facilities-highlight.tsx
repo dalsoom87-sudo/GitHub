@@ -6,7 +6,7 @@ const facilities = [
   {
     name: "미온수풀 & 수영장",
     caption: "낮과 밤 모두 편안한 물놀이",
-    image: "/images/1 (121).jpg",
+    image: "/images/theme-night-hero-v2.jpg",
     href: SITE_LINKS.guide,
   },
   {
@@ -33,23 +33,24 @@ export default function FacilitiesHighlightSection() {
   return (
     <section
       id="facilities"
-      className="relative scroll-mt-24 bg-[#f2ece3] text-[#16253b]"
+      className="relative scroll-mt-24 bg-[var(--page-bg)]"
+      style={{ color: "var(--text-main)" }}
     >
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_bottom,rgba(22,37,59,0.06)_0%,rgba(22,37,59,0.02)_30%,rgba(255,255,255,0)_100%)]"
+        className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_bottom,rgba(22,37,59,0.05)_0%,rgba(22,37,59,0.02)_30%,rgba(255,255,255,0)_100%)]"
       />
 
       <div className="relative mx-auto w-full max-w-6xl px-6 py-14 sm:px-10 sm:py-16 lg:px-16 lg:py-20">
-        <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#395171]/80">
+        <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[var(--home-eyebrow)]">
           Facilities Highlight
         </p>
 
-        <h2 className="mt-3 max-w-3xl text-2xl font-semibold leading-tight tracking-tight text-[#11233b] sm:text-3xl lg:text-[2.05rem]">
+        <h2 className="mt-3 max-w-3xl text-2xl font-semibold leading-tight tracking-tight text-[var(--home-heading)] sm:text-3xl lg:text-[2.05rem]">
           달숨의 핵심 시설을 사진으로 먼저 만나보세요
         </h2>
 
-        <p className="mt-3 max-w-3xl text-sm leading-relaxed text-[#324965] sm:text-base">
+        <p className="mt-3 max-w-3xl text-sm leading-relaxed text-[var(--home-body)] sm:text-base">
           자주 찾는 시설 4가지를 미리 보고, 원하는 공간으로 이어서 확인할 수 있습니다.
         </p>
 
@@ -58,7 +59,7 @@ export default function FacilitiesHighlightSection() {
             <Link
               key={facility.name}
               href={facility.href}
-              className="group relative block min-h-[15.5rem] overflow-hidden rounded-2xl border border-[#c8b8a6]/45 bg-[#ddd5cb]"
+              className="group relative block min-h-[15.5rem] overflow-hidden rounded-2xl border border-[color:var(--border-soft)] bg-[#ddd5cb]"
             >
               <Image
                 src={facility.image}
@@ -83,7 +84,12 @@ export default function FacilitiesHighlightSection() {
 
         <Link
           href={SITE_LINKS.guide}
-          className="mt-8 inline-flex items-center rounded-full border border-[#c1b09d]/65 bg-[#f8f2ea] px-5 py-2.5 text-sm font-semibold text-[#5a4638] transition-colors hover:bg-[#f2e7d9]"
+          className="mt-8 inline-flex items-center rounded-full border px-5 py-2.5 text-sm font-semibold transition-colors"
+          style={{
+            borderColor: "var(--home-outline-btn-border)",
+            background: "var(--home-outline-btn-bg)",
+            color: "var(--home-outline-btn-text)",
+          }}
         >
           전체 시설 안내 보기
         </Link>
