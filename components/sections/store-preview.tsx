@@ -2,33 +2,33 @@ import Image from "next/image";
 import Link from "next/link";
 import { SITE_LINKS } from "@/lib/site-links";
 
-const photos = [
-  { src: "/images/2 (1).jpg", alt: "현장 매점 전경" },
-  { src: "/images/2 (5).jpg", alt: "매점 진열대" },
-  { src: "/images/2 (8).jpg", alt: "매점 냉장 진열" },
-  { src: "/images/2 (12).jpg", alt: "매점 내부 모습" },
-] as const;
-
-const categories = [
+const foodItems = [
   {
-    title: "음료",
+    name: "달숨 통삼겹 플래터",
+    tag: "Signature",
+    tagColor: "bg-amber-500/85",
     description:
-      "냉장·상온 음료 등은 현장 진열 상태를 기준으로 확인하실 수 있습니다.",
+      "달숨의 시그니처 메뉴. 두툼하게 썬 통삼겹을 불 앞에서 천천히 구워 먹는 경험입니다. 장작 냄새와 함께라면 더욱 특별해요.",
+    detail: "쌈채소 · 쌈장 · 명이나물 함께 제공",
+    image: "/images/2 (3).jpg",
   },
   {
-    title: "간식",
+    name: "캠핑 고기 세트",
+    tag: "세트 메뉴",
+    tagColor: "bg-indigo-500/80",
     description:
-      "과자 등 간단한 간식류가 비치되는 경우가 있으며, 품목은 시기에 따라 달라질 수 있습니다.",
+      "삼겹살, 목살, 쌈채소, 버섯, 명이나물, 쌈장까지 한 번에 준비됩니다. 짐을 최소화하고 싶은 분들께 딱 맞는 구성이에요.",
+    detail: "2인 기준 / 30,000원",
+    image: "/images/2 (6).jpg",
   },
   {
-    title: "아이스크림",
+    name: "달숨 매점",
+    tag: "현장 이용",
+    tagColor: "bg-emerald-600/80",
     description:
-      "계절과 입고 상황에 따라 구성이 달라질 수 있으니 현장에서 확인해 주세요.",
-  },
-  {
-    title: "간단 물품",
-    description:
-      "일부 필요한 물품을 함께 준비하는 경우가 있습니다. 사전에 필요 여부를 문의해 주시면 안내에 도움이 됩니다.",
+      "음료, 아이스크림, 간단한 간식과 일부 필요한 물품을 현장에서 바로 구매할 수 있습니다. 몸만 와도 불편하지 않게 준비했어요.",
+    detail: "품목은 운영일에 따라 상이",
+    image: "/images/2 (1).jpg",
   },
 ] as const;
 
@@ -36,7 +36,7 @@ export default function StorePreviewSection() {
   return (
     <section
       id="store"
-      className="relative scroll-mt-24 bg-[var(--page-bg)]"
+      className="relative scroll-mt-24 bg-[var(--page-strip)]"
       style={{ color: "var(--text-main)" }}
     >
       <div
@@ -46,64 +46,73 @@ export default function StorePreviewSection() {
 
       <div className="relative mx-auto w-full max-w-6xl px-6 py-14 sm:px-10 sm:py-16 lg:px-16 lg:py-20">
         <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[var(--home-eyebrow)]">
-          On-site Store
+          Food &amp; Store
         </p>
 
         <h2 className="mt-3 max-w-3xl text-2xl font-semibold leading-tight tracking-tight text-[var(--home-heading)] sm:text-3xl lg:text-[2.05rem]">
-          간단한 먹거리와 필요한 물품은 현장 매점에서
+          몸만 와도 충분한 달숨의 푸드 & 스토어
         </h2>
 
-        <p className="mt-3 max-w-3xl text-sm leading-relaxed text-[var(--home-body)] sm:text-base">
-          음료, 과자, 아이스크림, 간단한 식품과 일부 필요한 물품을 현장에서 확인하실 수
-          있습니다. 품목은 날짜와 준비 상황에 따라 달라질 수 있으니 참고만 해 주세요.
+        <p className="mt-3 max-w-2xl text-sm leading-relaxed text-[var(--home-body)] sm:text-base">
+          먹거리 준비 부담을 줄이고 머무는 경험에 집중할 수 있도록, 달숨만의 메뉴와 현장 매점을 운영합니다.
         </p>
 
-        <div className="mt-8 grid grid-cols-2 gap-3 sm:mt-10 sm:gap-4 lg:grid-cols-4">
-          {photos.map((photo) => (
-            <div
-              key={photo.src}
-              className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-[color:var(--border-soft)] bg-[var(--surface-soft)]"
-            >
-              <Image
-                src={photo.src}
-                alt={photo.alt}
-                fill
-                className="object-cover"
-                sizes="(min-width: 1024px) 22vw, 45vw"
-              />
-            </div>
-          ))}
-        </div>
-
-        <div className="mt-8 grid gap-3 sm:mt-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-4">
-          {categories.map((item) => (
-            <div
-              key={item.title}
-              className="rounded-2xl border border-[color:var(--home-card-border)] bg-[var(--surface)] px-4 py-4 sm:px-5 sm:py-5"
+        <div className="mt-8 grid grid-cols-1 gap-5 sm:mt-10 lg:grid-cols-3 lg:gap-6">
+          {foodItems.map((item) => (
+            <article
+              key={item.name}
+              className="group flex flex-col overflow-hidden rounded-2xl border border-[color:var(--home-card-border)] bg-[var(--surface)]"
               style={{ boxShadow: "var(--detail-shadow-card)" }}
             >
-              <p className="text-sm font-semibold text-[var(--home-heading)]">
-                {item.title}
-              </p>
-              <p className="mt-2 text-xs leading-relaxed text-[var(--text-sub)] sm:text-[13px]">
-                {item.description}
-              </p>
-            </div>
+              {/* 이미지 영역 */}
+              <div className="relative h-[200px] overflow-hidden sm:h-[220px]">
+                <Image
+                  src={item.image}
+                  alt={item.name}
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                  sizes="(min-width: 1024px) 33vw, 100vw"
+                />
+                <div
+                  aria-hidden
+                  className="absolute inset-0 bg-[linear-gradient(to_top,rgba(8,14,24,0.55)_0%,rgba(8,14,24,0.12)_55%,rgba(8,14,24,0)_100%)]"
+                />
+                {/* 태그 */}
+                <div className="absolute left-3 top-3">
+                  <span
+                    className={`inline-block rounded-full px-2.5 py-0.5 text-[10px] font-semibold tracking-wide text-white ${item.tagColor}`}
+                  >
+                    {item.tag}
+                  </span>
+                </div>
+              </div>
+
+              {/* 텍스트 영역 */}
+              <div className="flex flex-1 flex-col px-5 py-5">
+                <h3 className="text-base font-semibold tracking-tight text-[var(--home-heading)] sm:text-[1.05rem]">
+                  {item.name}
+                </h3>
+                <p className="mt-2 flex-1 text-[13px] leading-relaxed text-[var(--text-sub)] sm:text-sm">
+                  {item.description}
+                </p>
+                <p
+                  className="mt-4 border-t pt-3 text-[12px] font-medium text-[var(--text-muted)]"
+                  style={{ borderColor: "var(--border-soft)" }}
+                >
+                  {item.detail}
+                </p>
+              </div>
+            </article>
           ))}
         </div>
 
-        <div className="mt-8 max-w-3xl space-y-2 rounded-2xl border border-[color:var(--border-soft)] bg-[var(--surface)] px-4 py-4 sm:px-5 sm:py-5">
-          <p className="text-sm leading-relaxed text-[var(--text-sub)]">
-            판매 품목은 운영일과 재고 상황에 따라 달라질 수 있습니다.
-          </p>
-          <p className="text-sm leading-relaxed text-[var(--text-sub)]">
-            필요한 물품은 예약 전 문의를 권장드립니다.
-          </p>
-        </div>
+        <p className="mt-6 max-w-xl text-xs leading-relaxed text-[var(--text-muted)] sm:text-sm">
+          매점 품목은 운영일과 재고 상황에 따라 달라질 수 있습니다. 사전에 필요 여부를 문의해 주시면 안내에 도움이 됩니다.
+        </p>
 
         <Link
           href={SITE_LINKS.guideStore}
-          className="mt-5 inline-flex items-center rounded-full border px-5 py-2.5 text-sm font-semibold transition-colors"
+          className="mt-4 inline-flex items-center rounded-full border px-5 py-2.5 text-sm font-semibold transition-colors"
           style={{
             borderColor: "var(--home-outline-btn-border)",
             background: "var(--home-outline-btn-bg)",

@@ -4,19 +4,27 @@ import { SITE_LINKS } from "@/lib/site-links";
 const quickGuides = [
   {
     title: "체크인 / 체크아웃",
-    content: "15:00 입실 · 11:00 퇴실 기준.",
+    content: "체크인 15:00 · 체크아웃 12:00. 수영장·야외 부대시설은 11:00부터 선이용 가능.",
   },
   {
     title: "추가 인원",
-    content: "기준 초과 시 성인 2만원, 아동 1만원.",
+    content: "기준 인원 초과 시 성인 20,000원, 아동 10,000원.",
   },
   {
     title: "예약 전 확인",
-    content: "날짜·인원·옵션 선택 내역 확인.",
+    content: "날짜·인원·옵션을 미리 정리해 두시면 안내에 도움이 됩니다.",
   },
   {
     title: "매너타임",
-    content: "밤 10시 이후 정숙 이용 권장.",
+    content: "밤 11시(23:00) 이후에는 다른 이용객을 위해 정숙한 이용을 부탁드립니다.",
+  },
+  {
+    title: "주차",
+    content: "주차 공간이 충분히 마련되어 있습니다. 별도 주차비 없음.",
+  },
+  {
+    title: "반려동물",
+    content: "5호·6호·7호만 동반 가능. 추가 3만원, 목줄 착용 및 배변 처리 필수.",
   },
 ] as const;
 
@@ -38,14 +46,14 @@ export default function QuickGuideSection() {
         </p>
 
         <h2 className="mt-3 max-w-3xl text-2xl font-semibold leading-tight tracking-tight text-[var(--home-heading)] sm:text-3xl lg:text-[2.05rem]">
-          이용 조건 요약
+          이용 전 확인 사항
         </h2>
 
         <p className="mt-3 max-w-2xl text-sm leading-relaxed text-[var(--home-body)] sm:text-base">
-          운영 시간·인원·예약 시 확인 항목·야간 매너만 짧게 정리했습니다.
+          체크인 시간, 주차, 반려동물, 매너타임 등 예약 전 꼭 확인해야 할 내용을 정리했습니다.
         </p>
 
-        <div className="mt-8 grid grid-cols-1 gap-3.5 sm:mt-10 sm:grid-cols-2 sm:gap-4">
+        <div className="mt-8 grid grid-cols-1 gap-3.5 sm:mt-10 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3">
           {quickGuides.map((item) => (
             <article
               key={item.title}
@@ -70,7 +78,7 @@ export default function QuickGuideSection() {
             color: "var(--home-outline-btn-text)",
           }}
         >
-          이용안내 보기
+          이용안내 전체 보기
         </Link>
       </div>
     </section>

@@ -4,6 +4,7 @@ import Link from "next/link";
 import Script from "next/script";
 import "./globals.css";
 import MobileEntryOverlay from "@/components/overlays/mobile-entry-overlay";
+import MobileBookingBar from "@/components/overlays/mobile-booking-bar";
 import ThemeSwitcher from "@/components/theme-switcher";
 import { SITE_LINKS } from "@/lib/site-links";
 
@@ -52,7 +53,7 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${ibmPlexSansKr.variable} theme-night h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col font-sans">
+      <body className="min-h-full flex flex-col font-sans pb-14 md:pb-0">
         <Script id="dalsoom-theme-init" strategy="beforeInteractive">
           {THEME_INIT}
         </Script>
@@ -131,6 +132,7 @@ export default function RootLayout({
         <main className="flex-1">{children}</main>
 
         <MobileEntryOverlay />
+        <MobileBookingBar />
 
         <footer
           className="border-t"
@@ -156,7 +158,7 @@ export default function RootLayout({
                   <br />
                   연락처: {SITE_LINKS.contactPhoneDisplay}
                   <br />
-                  계좌정보: 카카오뱅크 / 3333026902261 정성호
+                  계좌정보: 카카오뱅크 3333-02-6902261 정성호
                 </p>
               </div>
               <div>
