@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
-import { IBM_Plex_Sans_KR } from "next/font/google";
-import Link from "next/link";
+import { IBM_Plex_Sans_KR, Noto_Serif_KR } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import MobileEntryOverlay from "@/components/overlays/mobile-entry-overlay";
 import MobileBookingBar from "@/components/overlays/mobile-booking-bar";
-import ThemeSwitcher from "@/components/theme-switcher";
+import SiteHeader from "@/components/site-header";
 import { SITE_LINKS } from "@/lib/site-links";
 
 const ibmPlexSansKr = IBM_Plex_Sans_KR({
@@ -13,6 +12,13 @@ const ibmPlexSansKr = IBM_Plex_Sans_KR({
   weight: ["400", "500", "600", "700"],
   variable: "--font-ibm-plex-sans-kr",
   display: "swap",
+});
+
+const notoSerifKr = Noto_Serif_KR({
+  weight: ["400", "700"],
+  variable: "--font-noto-serif-kr",
+  display: "swap",
+  preload: false,
 });
 
 export const metadata: Metadata = {
@@ -51,83 +57,14 @@ export default function RootLayout({
     <html
       lang="ko"
       suppressHydrationWarning
-      className={`${ibmPlexSansKr.variable} theme-night h-full antialiased`}
+      className={`${ibmPlexSansKr.variable} ${notoSerifKr.variable} theme-night h-full antialiased`}
     >
       <body className="min-h-full flex flex-col font-sans pb-14 md:pb-0">
         <Script id="dalsoom-theme-init" strategy="beforeInteractive">
           {THEME_INIT}
         </Script>
 
-        <header
-          className="sticky top-0 z-50 border-b backdrop-blur-md ring-1 ring-inset ring-white/[0.06] shadow-[0_1px_0_rgba(255,255,255,0.04)_inset]"
-          style={{
-            background: "var(--header-bg)",
-            borderColor: "var(--header-border)",
-          }}
-        >
-          <div className="mx-auto flex w-full max-w-6xl flex-wrap items-center justify-between gap-3 px-6 py-3 sm:px-10">
-            <Link
-              href={SITE_LINKS.homeHero}
-              className="flex min-w-0 items-center gap-2"
-              style={{ color: "var(--header-text)" }}
-            >
-              <span className="text-sm font-semibold tracking-[-0.01em]">
-                달숨 글램핑
-              </span>
-              <span
-                className="ui-label hidden text-[11px] sm:inline"
-                style={{ color: "var(--header-text-muted)" }}
-              >
-                Dalsoom Glamping
-              </span>
-            </Link>
-
-            <nav className="hidden items-center gap-5 sm:flex">
-              <Link
-                href={SITE_LINKS.bookingSection}
-                className="ui-label text-[12px] transition-colors hover:opacity-100"
-                style={{ color: "var(--header-text-muted)" }}
-              >
-                이용 방식
-              </Link>
-              <Link
-                href={SITE_LINKS.whySection}
-                className="ui-label text-[12px] transition-colors hover:opacity-100"
-                style={{ color: "var(--header-text-muted)" }}
-              >
-                달숨의 강점
-              </Link>
-              <Link
-                href={SITE_LINKS.facilitiesSection}
-                className="ui-label text-[12px] transition-colors hover:opacity-100"
-                style={{ color: "var(--header-text-muted)" }}
-              >
-                시설
-              </Link>
-              <Link
-                href={SITE_LINKS.priceSection}
-                className="ui-label text-[12px] transition-colors hover:opacity-100"
-                style={{ color: "var(--header-text-muted)" }}
-              >
-                요금 안내
-              </Link>
-            </nav>
-
-            <div className="flex flex-shrink-0 items-center gap-2 sm:gap-3">
-              <ThemeSwitcher />
-              <Link
-                href={SITE_LINKS.contactTel}
-                className="inline-flex h-10 items-center justify-center rounded-full px-4 text-sm font-semibold shadow-[0_1px_0_rgba(255,255,255,0.12)] transition-opacity hover:opacity-95"
-                style={{
-                  background: "var(--header-booking-bg)",
-                  color: "var(--header-booking-text)",
-                }}
-              >
-                예약 문의하기
-              </Link>
-            </div>
-          </div>
-        </header>
+        <SiteHeader />
 
         <main className="flex-1">{children}</main>
 

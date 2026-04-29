@@ -2,25 +2,26 @@
 
 @theme inline {
   --font-sans: var(--font-ibm-plex-sans-kr);
+  --font-serif: var(--font-noto-serif-kr);
 }
 
-/* -------------------------------------------------------------------------- */
-/* 테마 토큰: html에 theme-day | theme-sunset | theme-night 중 하나 */
-/* 기본 SSR: theme-night (layout.tsx). 클라이언트는 localStorage로 덮어씀. */
-/* -------------------------------------------------------------------------- */
+/* ─────────────────────────────────────────────────────────────────── */
+/* 테마 토큰: html.theme-day | theme-sunset | theme-night             */
+/* ─────────────────────────────────────────────────────────────────── */
 
 html.theme-night {
-  --page-bg: #f3eee7;
-  --page-strip: #f7f3ec;
-  --surface: #fffdfa;
-  --surface-soft: #fffcf8;
-  --text-main: #16253b;
-  --text-sub: #4a607b;
-  --text-muted: #556b7f;
-  --border-soft: #c9b9a7;
+  /* 배경 — 샴페인·아이보리 톤으로 정제 */
+  --page-bg: #f1ebe3;
+  --page-strip: #e6dfd6;
+  --surface: #fefdfb;
+  --surface-soft: #f4f0ea;
+  --text-main: #0f1e35;
+  --text-sub: #48617c;
+  --text-muted: #7e96b0;
+  --border-soft: #e1dbd1;
 
-  /* 저녁: sunset보다 차갑고 선명. 블루·네이비 대비 소폭 강화 */
-  --hero-base: #040a14;
+  /* 히어로 */
+  --hero-base: #020914;
   --hero-overlay-top: linear-gradient(
     to bottom,
     rgba(2, 12, 36, 0.55) 0%,
@@ -50,7 +51,7 @@ html.theme-night {
     rgba(12, 36, 64, 0.16) 100%
   );
 
-  /* 정보바: 회색 번짐 줄이고 딥네이비에 가깝게 */
+  /* 헤더 */
   --header-bg: rgba(10, 20, 36, 0.92);
   --header-border: rgba(255, 255, 255, 0.07);
   --header-text: #ffffff;
@@ -62,50 +63,52 @@ html.theme-night {
   --header-segment-idle-text: rgba(255, 255, 255, 0.42);
   --header-segment-hover-bg: rgba(255, 255, 255, 0.07);
 
-  /* 헤더 예약 CTA: 히어로 버튼 토큰과 분리 (낮 테마 등에서도 헤더 대비 유지) */
   --header-booking-bg: #ffffff;
-  --header-booking-text: #10213a;
+  --header-booking-text: #0c1c34;
 
+  /* 히어로 버튼 */
   --button-primary-bg: #ffffff;
-  --button-primary-text: #10213a;
+  --button-primary-text: #0a1a2e;
   --button-primary-hover: #f3f5f8;
-  --button-secondary-bg: rgba(255, 255, 255, 0.1);
-  --button-secondary-border: rgba(255, 255, 255, 0.4);
-  --button-secondary-text: rgba(255, 255, 255, 0.95);
-  --button-secondary-hover: rgba(255, 255, 255, 0.16);
+  --button-secondary-bg: rgba(255, 255, 255, 0.08);
+  --button-secondary-border: rgba(255, 255, 255, 0.24);
+  --button-secondary-text: rgba(255, 255, 255, 0.92);
+  --button-secondary-hover: rgba(255, 255, 255, 0.14);
 
-  --home-eyebrow: rgba(47, 67, 97, 0.78);
-  --home-heading: #0f2037;
-  --home-body: #314764;
-  --home-card-border: rgba(200, 185, 166, 0.34);
-  --home-muted-line: #bba88f;
-  --home-outline-btn-bg: #f8f2ea;
-  --home-outline-btn-border: rgba(194, 177, 159, 0.65);
-  --home-outline-btn-text: #5b4638;
-  --home-outline-btn-hover: #f2e8dc;
+  /* 홈 섹션 토큰 */
+  --home-eyebrow: rgba(47, 67, 97, 0.6);
+  --home-heading: #0c1c34;
+  --home-body: #3a5268;
+  --home-card-border: rgba(0, 0, 0, 0.055);
+  --home-muted-line: #cec7bc;
+  --home-outline-btn-bg: #f2ede7;
+  --home-outline-btn-border: rgba(0, 0, 0, 0.1);
+  --home-outline-btn-text: #1c3050;
+  --home-outline-btn-hover: #eae4dc;
 
-  --cta-band-bg: #111a2a;
+  /* CTA 밴드 */
+  --cta-band-bg: #0d1928;
   --cta-band-wash: radial-gradient(
       circle at 20% 10%,
-      rgba(255, 200, 125, 0.16) 0%,
+      rgba(255, 200, 125, 0.14) 0%,
       rgba(255, 200, 125, 0) 38%
     ),
     radial-gradient(
       circle at 85% 20%,
-      rgba(125, 170, 255, 0.18) 0%,
+      rgba(125, 170, 255, 0.14) 0%,
       rgba(125, 170, 255, 0) 42%
     );
   --cta-band-shade: linear-gradient(
     to bottom,
-    rgba(8, 12, 20, 0.52) 0%,
-    rgba(8, 12, 20, 0.72) 45%,
-    rgba(8, 12, 20, 0.9) 100%
+    rgba(6, 10, 18, 0.48) 0%,
+    rgba(6, 10, 18, 0.68) 45%,
+    rgba(6, 10, 18, 0.88) 100%
   );
   --cta-text: #ffffff;
-  --cta-text-muted: rgba(255, 255, 255, 0.75);
-  --cta-text-faint: rgba(255, 255, 255, 0.55);
+  --cta-text-muted: rgba(255, 255, 255, 0.72);
+  --cta-text-faint: rgba(255, 255, 255, 0.48);
 
-  /* 스테이 상세: 상단 사진 스크림·카드 (홈 히어로와 같은 시간대 감도) */
+  /* 스테이 상세 */
   --detail-hero-caption-shadow: 0 1px 16px rgba(0, 0, 0, 0.42),
     0 1px 28px rgba(0, 20, 40, 0.25);
   --detail-photo-scrim: linear-gradient(
@@ -114,19 +117,19 @@ html.theme-night {
     rgba(12, 24, 44, 0.14) 42%,
     rgba(16, 32, 52, 0) 70%
   );
-  --detail-shadow-card: 0 12px 40px -24px rgba(22, 37, 58, 0.32);
+  --detail-shadow-card: 0 16px 48px -12px rgba(14, 26, 46, 0.09);
   --detail-bullet: #9a8b76;
 }
 
 html.theme-day {
-  --page-bg: #f5f8fc;
-  --page-strip: #eef3f9;
+  --page-bg: #f3f7fb;
+  --page-strip: #e6eef8;
   --surface: #ffffff;
-  --surface-soft: #f3f6fa;
-  --text-main: #142a3d;
-  --text-sub: #3d5466;
-  --text-muted: #5a6d7c;
-  --border-soft: #cfd9e6;
+  --surface-soft: #f0f5fb;
+  --text-main: #0f2438;
+  --text-sub: #3a5266;
+  --text-muted: #668090;
+  --border-soft: #dae3ed;
 
   --hero-base: #3a556b;
   --hero-overlay-top: linear-gradient(
@@ -156,7 +159,6 @@ html.theme-day {
     rgba(140, 160, 188, 0.08) 100%
   );
 
-  /* 헤더: 3테마 공통 딥네이비 정보 바 */
   --header-bg: rgba(10, 20, 36, 0.92);
   --header-border: rgba(255, 255, 255, 0.07);
   --header-text: #ffffff;
@@ -169,27 +171,27 @@ html.theme-day {
   --header-segment-hover-bg: rgba(255, 255, 255, 0.07);
 
   --header-booking-bg: #ffffff;
-  --header-booking-text: #10213a;
+  --header-booking-text: #0c1e32;
 
-  --button-primary-bg: #142a3d;
-  --button-primary-text: #f7fafc;
-  --button-primary-hover: #1f3d56;
-  --button-secondary-bg: rgba(255, 255, 255, 0.65);
-  --button-secondary-border: rgba(20, 42, 61, 0.22);
-  --button-secondary-text: #142a3d;
-  --button-secondary-hover: rgba(255, 255, 255, 0.88);
+  --button-primary-bg: #0c1e32;
+  --button-primary-text: #f4f8fc;
+  --button-primary-hover: #162e4a;
+  --button-secondary-bg: rgba(255, 255, 255, 0.62);
+  --button-secondary-border: rgba(12, 30, 50, 0.2);
+  --button-secondary-text: #0c1e32;
+  --button-secondary-hover: rgba(255, 255, 255, 0.86);
 
-  --home-eyebrow: rgba(35, 72, 102, 0.72);
-  --home-heading: #0f2438;
-  --home-body: #2f4a5e;
-  --home-card-border: rgba(180, 198, 218, 0.55);
-  --home-muted-line: #9eb0c4;
-  --home-outline-btn-bg: #eef3f9;
-  --home-outline-btn-border: rgba(120, 150, 180, 0.45);
-  --home-outline-btn-text: #1a3a52;
-  --home-outline-btn-hover: #e4ecf5;
+  --home-eyebrow: rgba(35, 72, 102, 0.6);
+  --home-heading: #0c1e32;
+  --home-body: #2d4a5e;
+  --home-card-border: rgba(0, 0, 0, 0.055);
+  --home-muted-line: #b0c4d6;
+  --home-outline-btn-bg: #eaf2f9;
+  --home-outline-btn-border: rgba(0, 0, 0, 0.1);
+  --home-outline-btn-text: #183852;
+  --home-outline-btn-hover: #e0ecf7;
 
-  --cta-band-bg: #e8eef6;
+  --cta-band-bg: #e4eef7;
   --cta-band-wash: radial-gradient(
       circle at 22% 12%,
       rgba(120, 170, 230, 0.22) 0%,
@@ -197,17 +199,17 @@ html.theme-day {
     ),
     radial-gradient(
       circle at 82% 18%,
-      rgba(255, 210, 160, 0.2) 0%,
+      rgba(255, 210, 160, 0.18) 0%,
       rgba(255, 210, 160, 0) 44%
     );
   --cta-band-shade: linear-gradient(
     to bottom,
-    rgba(230, 238, 248, 0.92) 0%,
-    rgba(220, 232, 246, 0.96) 100%
+    rgba(228, 238, 247, 0.9) 0%,
+    rgba(218, 230, 245, 0.95) 100%
   );
-  --cta-text: #142a3d;
-  --cta-text-muted: rgba(20, 42, 61, 0.78);
-  --cta-text-faint: rgba(20, 42, 61, 0.52);
+  --cta-text: #0c1e32;
+  --cta-text-muted: rgba(12, 30, 50, 0.76);
+  --cta-text-faint: rgba(12, 30, 50, 0.48);
 
   --detail-hero-caption-shadow: 0 1px 12px rgba(0, 0, 0, 0.28),
     0 1px 22px rgba(28, 44, 62, 0.18);
@@ -217,21 +219,20 @@ html.theme-day {
     rgba(40, 58, 78, 0.1) 42%,
     rgba(52, 72, 92, 0) 68%
   );
-  --detail-shadow-card: 0 12px 40px -24px rgba(20, 42, 61, 0.14);
+  --detail-shadow-card: 0 16px 48px -12px rgba(14, 26, 46, 0.08);
   --detail-bullet: #7a8fa3;
 }
 
 html.theme-sunset {
-  --page-bg: #faf3ed;
-  --page-strip: #f4e8df;
-  --surface: #fffaf6;
-  --surface-soft: #fff5ed;
-  --text-main: #1f2838;
-  --text-sub: #4a4550;
-  --text-muted: #5c5662;
-  --border-soft: #e8c4b0;
+  --page-bg: #faf3e8;
+  --page-strip: #ede3d6;
+  --surface: #fefdfb;
+  --surface-soft: #f7f0e6;
+  --text-main: #1c2434;
+  --text-sub: #484450;
+  --text-muted: #78717e;
+  --border-soft: #e2d9c9;
 
-  /* 해질녘: 새 컷 사진 전제 — 오버레이 얕게, 디테일 우선. 낮보다 무드, 밤보다 따뜻. 핑크·탁갈색 금지 */
   --hero-base: #121016;
   --hero-overlay-top: linear-gradient(
     to bottom,
@@ -277,63 +278,61 @@ html.theme-sunset {
   --header-booking-bg: #ffffff;
   --header-booking-text: #10213a;
 
-  /* 히어로: 예약하기 최우선(솔리드 화이트), 보조는 한 단계 약하게 */
   --button-primary-bg: #ffffff;
-  --button-primary-text: #10213a;
+  --button-primary-text: #0a1a2e;
   --button-primary-hover: #f3f5f8;
   --button-secondary-bg: rgba(255, 255, 255, 0.08);
-  --button-secondary-border: rgba(255, 255, 255, 0.34);
-  --button-secondary-text: rgba(255, 255, 255, 0.88);
+  --button-secondary-border: rgba(255, 255, 255, 0.24);
+  --button-secondary-text: rgba(255, 255, 255, 0.9);
   --button-secondary-hover: rgba(255, 255, 255, 0.14);
 
-  --home-eyebrow: rgba(90, 56, 48, 0.75);
-  --home-heading: #2a1e1c;
-  --home-body: #4a3f3c;
-  --home-card-border: rgba(232, 180, 150, 0.45);
-  --home-muted-line: #c9a090;
-  --home-outline-btn-bg: #fff0e6;
-  --home-outline-btn-border: rgba(200, 140, 110, 0.5);
-  --home-outline-btn-text: #5a3830;
-  --home-outline-btn-hover: #ffe4d4;
+  --home-eyebrow: rgba(90, 56, 48, 0.62);
+  --home-heading: #261a18;
+  --home-body: #46403d;
+  --home-card-border: rgba(0, 0, 0, 0.055);
+  --home-muted-line: #caa48e;
+  --home-outline-btn-bg: #f4ece4;
+  --home-outline-btn-border: rgba(0, 0, 0, 0.1);
+  --home-outline-btn-text: #372620;
+  --home-outline-btn-hover: #ecddd2;
 
-  --cta-band-bg: #3a2428;
+  --cta-band-bg: #352028;
   --cta-band-wash: radial-gradient(
       circle at 18% 8%,
-      rgba(255, 180, 130, 0.35) 0%,
+      rgba(255, 180, 130, 0.32) 0%,
       rgba(255, 180, 130, 0) 42%
     ),
     radial-gradient(
       circle at 88% 22%,
-      rgba(255, 145, 95, 0.18) 0%,
+      rgba(255, 145, 95, 0.16) 0%,
       rgba(255, 145, 95, 0) 46%
     );
   --cta-band-shade: linear-gradient(
     to bottom,
-    rgba(32, 18, 22, 0.55) 0%,
-    rgba(42, 26, 30, 0.82) 100%
+    rgba(30, 16, 20, 0.52) 0%,
+    rgba(40, 22, 28, 0.8) 100%
   );
   --cta-text: #fff8f4;
-  --cta-text-muted: rgba(255, 240, 232, 0.82);
-  --cta-text-faint: rgba(255, 230, 220, 0.55);
+  --cta-text-muted: rgba(255, 240, 232, 0.8);
+  --cta-text-faint: rgba(255, 230, 220, 0.5);
 
   --detail-hero-caption-shadow: 0 1px 14px rgba(0, 0, 0, 0.38),
     0 1px 26px rgba(32, 18, 22, 0.22);
-  /* 상단 상세 사진: 홈 해질녘 히어로와 동일 계열 — 얕은 웜, 탁한 갈색 피함 */
   --detail-photo-scrim: linear-gradient(
     to top,
     rgba(24, 14, 18, 0.36) 0%,
     rgba(52, 34, 38, 0.1) 44%,
     rgba(100, 62, 52, 0) 72%
   );
-  --detail-shadow-card: 0 14px 44px -22px rgba(90, 48, 42, 0.26);
+  --detail-shadow-card: 0 16px 48px -12px rgba(80, 40, 30, 0.1);
   --detail-bullet: #c9a090;
 }
 
-/* SSR 시 클래스 없으면 night 토큰과 동일하게 읽히도록 기본값 */
+/* SSR 기본값 (theme-night 와 동일) */
 :root {
-  --page-bg: #f3eee7;
-  --text-main: #16253b;
-  --text-sub: #4a607b;
+  --page-bg: #f1ebe3;
+  --text-main: #0f1e35;
+  --text-sub: #48617c;
   --detail-hero-caption-shadow: 0 1px 14px rgba(0, 0, 0, 0.35);
   --mobile-entry-scrim: linear-gradient(
     to top,
@@ -341,7 +340,36 @@ html.theme-sunset {
     rgba(6, 16, 36, 0.38) 40%,
     rgba(12, 36, 64, 0.16) 100%
   );
+
+  /* 다크 섹션 토큰 — 테마 무관 상수 */
+  --section-dark: #07101e;
+  --section-dark-surface: #0c1a2c;
+  --section-dark-text: #f1ede8;
+  --section-dark-muted: rgba(241, 237, 232, 0.52);
+  --section-dark-border: rgba(255, 255, 255, 0.075);
 }
+
+/* ─────────────────────────────────────────────────────────────────── */
+/* Hero 슬라이드 줌 — 느리고 고급스럽게                                */
+/* ─────────────────────────────────────────────────────────────────── */
+
+@keyframes hero-slide-zoom {
+  from { transform: scale(1.0); }
+  to   { transform: scale(1.05); }
+}
+
+.hero-zoom-image {
+  animation: hero-slide-zoom 20s ease-in-out infinite alternate;
+  transform-origin: center center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-zoom-image { animation: none !important; }
+}
+
+/* ─────────────────────────────────────────────────────────────────── */
+/* 헤더 세그먼트 유틸                                                  */
+/* ─────────────────────────────────────────────────────────────────── */
 
 .theme-header-segment {
   border-color: var(--header-segment-border);
@@ -365,12 +393,15 @@ html.theme-sunset {
   background: var(--header-segment-hover-bg);
 }
 
-/* 전역 본문: 자간·행간은 이 블록에서만 제어 */
+/* ─────────────────────────────────────────────────────────────────── */
+/* 전역 본문 타이포그래피                                              */
+/* ─────────────────────────────────────────────────────────────────── */
+
 body {
   margin: 0;
   font-family: var(--font-sans);
-  line-height: 1.65;
-  letter-spacing: -0.003em;
+  line-height: 1.72;
+  letter-spacing: -0.002em;
   color: var(--text-main);
   background: var(--page-bg);
 }
@@ -378,23 +409,23 @@ body {
 h1 {
   font-family: var(--font-sans);
   font-weight: 600;
-  line-height: 1.18;
-  letter-spacing: -0.006em;
+  line-height: 1.16;
+  letter-spacing: -0.015em;
 }
 
 h2 {
   font-family: var(--font-sans);
   font-weight: 600;
-  line-height: 1.42;
-  letter-spacing: -0.005em;
+  line-height: 1.36;
+  letter-spacing: -0.018em;
 }
 
 h3,
 h4 {
   font-family: var(--font-sans);
   font-weight: 500;
-  line-height: 1.4;
-  letter-spacing: -0.004em;
+  line-height: 1.38;
+  letter-spacing: -0.018em;
 }
 
 .ui-label {
@@ -405,4 +436,17 @@ h4 {
 
 .text-muted {
   color: var(--text-muted);
+}
+
+body.modal-open .mobile-booking-bar {
+  display: none;
+}
+
+/* 수평 스크롤 컨테이너 스크롤바 숨김 (ExperienceExplorer 모바일 탭바 등) */
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
 }

@@ -31,7 +31,7 @@ function InstagramIcon() {
 export default function MobileBookingBar() {
   return (
     <div
-      className="fixed inset-x-0 bottom-0 z-40 border-t md:hidden"
+      className="mobile-booking-bar fixed inset-x-0 bottom-0 z-40 border-t md:hidden"
       style={{
         background: "var(--header-bg)",
         borderColor: "var(--header-border)",

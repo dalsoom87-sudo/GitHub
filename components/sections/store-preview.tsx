@@ -18,7 +18,7 @@ const foodItems = [
     tagColor: "bg-indigo-500/80",
     description:
       "삼겹살, 목살, 쌈채소, 버섯, 명이나물, 쌈장까지 한 번에 준비됩니다. 짐을 최소화하고 싶은 분들께 딱 맞는 구성이에요.",
-    detail: "2인 기준 / 30,000원",
+    detail: "1인 15,000원 · 최소 2인 · 사전예약 필요",
     image: "/images/2 (6).jpg",
   },
   {

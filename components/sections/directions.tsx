@@ -80,11 +80,6 @@ export default function DirectionsSection() {
               <p className="text-xs leading-relaxed text-[var(--text-muted)]">
                 지도 보기는 아래 버튼을 이용해 주세요
               </p>
-              {/* 지도 임베드 교체 안내 */}
-              <span className="rounded-full border px-3 py-1 text-[10px] font-semibold tracking-wide text-[var(--text-muted)]"
-                style={{ borderColor: "var(--border-soft)" }}>
-                지도 임베드 예정
-              </span>
             </div>
           </div>
 

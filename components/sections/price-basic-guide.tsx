@@ -14,7 +14,7 @@ const simplePriceRows = [
 
 const addOnRows = [
   { label: "달숨 통삼겹 플래터", value: "45,000원 (2인)" },
-  { label: "고기 세트 (삼겹+목살 등)", value: "사전예약 가능" },
+  { label: "고기 세트 (삼겹+목살 등)", value: "1인 15,000원 / 사전예약" },
   { label: "BBQ 세트 (숯·그릴·석쇠)", value: "30,000원" },
   { label: "불멍 세트 (장작·화로대 등)", value: "25,000원" },
   { label: "장작 추가", value: "15,000원" },
@@ -129,7 +129,7 @@ export default function PriceBasicGuideSection() {
             </div>
 
             <p className="mt-5 text-xs leading-relaxed text-[var(--text-muted)]">
-              고기 세트는 1인 기준 최소 2인부터 사전예약이 필요합니다. 최종 요금은 예약·문의 시 다시 확인해 주세요.
+              고기 세트(1인 15,000원)는 최소 2인부터 사전예약이 필요합니다. 최종 요금은 예약·문의 시 다시 확인해 주세요.
             </p>
           </div>
         </div>
