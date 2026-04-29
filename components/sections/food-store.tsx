@@ -303,9 +303,7 @@ function FoodCard({
       }}
     >
       {/* 이미지 */}
-      <div
-        className={`relative shrink-0 ${isSignature ? "h-48 sm:h-52" : "h-40 sm:h-44"}`}
-      >
+      <div className="relative h-44 shrink-0 sm:h-48">
         <Image
           src={item.image}
           alt={item.title}
