@@ -83,8 +83,10 @@ export default function HeroSection() {
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-3 sm:mt-9">
-            <Link
-              href={SITE_LINKS.contactTel}
+            <a
+              href={SITE_LINKS.booking}
+              target="_blank"
+              rel="noreferrer noopener"
               className="inline-flex h-11 min-w-[8.5rem] items-center justify-center rounded-full px-6 text-sm font-semibold shadow-[0_1px_0_rgba(255,255,255,0.12)] transition-opacity hover:opacity-95"
               style={{
                 background: "var(--button-primary-bg)",
@@ -92,7 +94,7 @@ export default function HeroSection() {
               }}
             >
               예약 문의하기
-            </Link>
+            </a>
             <Link
               href={SITE_LINKS.stay.glamping}
               className="inline-flex h-11 min-w-[8.5rem] items-center justify-center rounded-full border px-6 text-sm font-semibold backdrop-blur-[2px] transition-opacity hover:opacity-90"

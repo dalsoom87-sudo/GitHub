@@ -123,7 +123,7 @@ export default function LocationFinalSection() {
                 className={navBtnClass}
                 style={navBtnStyle}
               >
-                티맵에서 달숨글램핑 검색
+                티맵으로 길찾기
                 <ExternalLinkIcon />
               </a>
 
@@ -173,7 +173,7 @@ export default function LocationFinalSection() {
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
               <a
-                href={SITE_LINKS.naver}
+                href={SITE_LINKS.booking}
                 target="_blank"
                 rel="noreferrer noopener"
                 className="inline-flex h-10 items-center justify-center rounded-md px-6 text-[13px] font-normal transition-colors hover:border-white/36 hover:text-white/90"

@@ -121,7 +121,7 @@ export default function HeroSlideshowSection() {
           {/* 버튼 */}
           <div className="mt-4 flex items-center gap-2">
             <a
-              href={SITE_LINKS.naver}
+              href={SITE_LINKS.booking}
               target="_blank"
               rel="noreferrer noopener"
               className="inline-flex h-8 items-center rounded-md px-3.5 text-[11px] font-normal transition-colors"

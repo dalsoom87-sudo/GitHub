@@ -61,12 +61,14 @@ export default function SiteHeader() {
         </nav>
 
         {/* 예약 문의 */}
-        <Link
-          href={SITE_LINKS.contactTel}
+        <a
+          href={SITE_LINKS.booking}
+          target="_blank"
+          rel="noreferrer noopener"
           className="inline-flex h-7 items-center rounded border border-white/28 px-3 text-[10px] font-normal text-white/65 transition-colors hover:border-white/40 hover:text-white/84"
         >
           예약 문의
-        </Link>
+        </a>
       </div>
     </header>
   );

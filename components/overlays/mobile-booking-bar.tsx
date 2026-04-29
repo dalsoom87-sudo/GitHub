@@ -39,9 +39,9 @@ export default function MobileBookingBar() {
       }}
     >
       <div className="flex h-14 items-stretch divide-x" style={{ borderColor: "var(--header-border)" }}>
-        {/* 네이버 플레이스 */}
+        {/* 네이버 예약 */}
         <a
-          href={SITE_LINKS.naver}
+          href={SITE_LINKS.booking}
           target="_blank"
           rel="noreferrer noopener"
           className="flex flex-1 flex-col items-center justify-center gap-0.5 transition-opacity active:opacity-70"
