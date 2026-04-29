@@ -7,9 +7,9 @@ export const SITE_LINKS = {
   faqSection: "/#faq",
   directionsSection: "/#location",
   /** 화면에 표시하는 문의 전화 */
-  contactPhoneDisplay: "010-3240-1123",
+  contactPhoneDisplay: "0507-1300-1261",
   /** tel: 링크용 전화번호 */
-  contactTel: "tel:010-3240-1123",
+  contactTel: "tel:0507-1300-1261",
   instagram: "https://www.instagram.com/stay_dalsoom/",
   naver: "https://naver.me/IMZUoPQF",
   tmap: "https://tmap.life/fa335dda",

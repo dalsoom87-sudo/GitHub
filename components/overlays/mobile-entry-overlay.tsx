@@ -5,6 +5,9 @@ import { useThemeClass } from "@/hooks/use-theme-class";
 import { THEME_ENTRY_IMAGE } from "@/lib/theme-media";
 import { useCallback, useEffect, useRef, useState } from "react";
 
+// true로 바꾸면 모바일 첫 화면 카드 슬라이드(글램핑·오토캠핑·피크닉)가 다시 활성화됩니다.
+const SHOW_HERO_BOTTOM_CARDS = false;
+
 const DISMISSED_UNTIL_KEY = "dalsoom-mobile-entry-dismissed-until";
 
 type EntryContent = {
@@ -189,7 +192,7 @@ export default function MobileEntryOverlay() {
     return () => window.clearTimeout(t);
   }, [open, updateActiveIndex]);
 
-  if (!open) return null;
+  if (!SHOW_HERO_BOTTOM_CARDS || !open) return null;
 
   return (
     <div
